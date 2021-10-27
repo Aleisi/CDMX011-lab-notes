@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 const Home = () => (
-  <section className="Home">
-    <h3>Hello Home</h3>
-  </section>
+  <div >
+  <button>Login</button>
+  <button>SignUp</button>
+  </div>
 )
 
 export default Home
