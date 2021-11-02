@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => (
   <div >
-  <button>Login</button>
+  <Link to = '/Login'><button>Login</button></Link>
   <button>SignUp</button>
   </div>
 )
