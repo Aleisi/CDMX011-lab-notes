@@ -5,10 +5,10 @@ const Register = () => {
       <>
         <form id="register">
           <input placeholder="Email"></input>
-          <input placeholder="Contraseña"></input>
-          <input placeholder="Confirma tu contraseña"></input>
-          <button>Ingresar</button>
-          <button>Ingresar con Google</button>
+          <input placeholder="Password"></input>
+          <input placeholder="Confirm your password"></input>
+          <button>Sign Up</button>
+          <button>Sign Up with Google</button>
         </form>
       </>
     );
