@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  background-color: #fedbd0;
+  font-family: 'Belleza', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* h1 {
+  display: flex;
+  justify-content: center;
+  font-family: 'Belleza', sans-serif;
+} */
+.logo {
+  width: 7px;
+  height: 10px;
+  margin: 2em;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#home {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  background: rgba(0, 0, 0, 0.1);
+  color: rgb(36, 36, 36);
+  margin: 1.2em;
+  padding: 1.5em;
+  width: 22em;
+  height: 4em;
+  border-radius: 0.5em;
+  border: none;
+  font-size: 23px;
+  width: 300px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  background: rgba(160, 0, 58, 0.66);
+  color: #FEDBD0;
+  border-radius: 23px;
+  border: none;
+  font-family: 'Belleza', sans-serif;
+  font-size: 25px;
+  width: 300px;
+  height: 80px;
+  margin: 20px;
+  padding: 10px;
+
+}
+
+#login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+:placeholder-shown {
+  font-family: 'Belleza', sans-serif;
+}
+
+#signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerLogin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 95vh;
+}
+.login-content {
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.form {
+display: flex;
+flex-direction: column;
+margin-top: 15px;
+}
+
+.logo {
+width: 100%;
+margin: 0;
+padding: 0%;
+cursor: pointer;
+}
+.icon{
+width: 20px;
+height: 20px;
 }
