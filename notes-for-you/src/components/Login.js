@@ -1,11 +1,11 @@
 import { useState } from "react";
 import logo from "../images/LogoNF.png";
 import iconGoogle from "../images/iconGoogle.png";
-import "./Login/login.css";
+import "./login.css";
 import { Link, useHistory } from "react-router-dom";
-import { login, gmailAuth } from "../lib/auth";
+import { loginAuth, gmailAuth } from "../lib/auth";
 
-function Login ()  {
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -14,27 +14,29 @@ function Login ()  {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    login(email, password)
+    loginAuth(email, password)
       .then(() => {
         console.log("You logged in");
         history.push("/Home");
-      }).catch((error) => {
-        setError(error.message)
-    });
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
-  const handleGmail= (e) =>{
-    e.preventDefault()
+  const handleGmail = (e) => {
+    e.preventDefault();
     gmailAuth()
-    .then((result) => {
-        history.push("/home")
+      .then((result) => {
+        history.push("/Home");
         const user = result.user.displayName;
         console.log(user);
-        console.log("You logged in with Gmail")
-    }).catch((error) => {
-      alert(error.message);
+        console.log("You logged in with Gmail");
+      })
+      .catch((error) => {
+        setError(error.message);
       });
-  }
+  };
 
   return (
     <div className="containerLogin">
@@ -43,24 +45,37 @@ function Login ()  {
       </div>
 
       <form id="login-form" className="form">
-        <div>
-          <input onChange={(e) => {setEmail(e.target.value);}}
-            id= "email" type="email" placeholder="Email" />
-          <input onChange={(e) => { setPassword(e.target.value) }}
-           id="password" type="password" placeholder="Password"  />
+        <div id="inputlogin">
+          <input
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            id="email"
+            type="email"
+            placeholder="Email"
+          />
+          <input
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            id="password"
+            type="password"
+            placeholder="Password"
+          />
 
-          <div className="error__section">{error}</div>
+          <div className="errorMessage">{error}</div>
 
-          <button onClick={handleLogin}>Log in</button>
+          <button onClick={handleLogin} type="submit" className="login-btn">
+            Log in
+          </button>
         </div>
 
         <br></br>
 
-        <div className="login-google">
-          <img src={iconGoogle} alt="logo google" className="icon" />
-
-          <Link to="/Home" onClick={handleGmail}>Login with Google</Link>
-        </div>
+        <button onClick={handleGmail} className="google-btn">
+          <img src={iconGoogle} alt="logo google" className="icon" /> Login with
+          Google
+        </button>
 
         <br></br>
         <div className="link-to-signup">
@@ -71,6 +86,6 @@ function Login ()  {
       </form>
     </div>
   );
-};
+}
 
 export default Login;
